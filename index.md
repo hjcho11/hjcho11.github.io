@@ -6,7 +6,7 @@ layout: default
 <div style="display: flex; max-width: 900px; margin: 0 auto; padding-top: 40px; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
 
   <!-- Photo column -->
-  <div style="flex: 0 0 200px;">
+  <div style="flex: 0 0 300px;">
     <img src="assets/images/selfimage.png" alt="Chris Cho" style="width: 100%; border-radius: 10px;">
   </div>
 
