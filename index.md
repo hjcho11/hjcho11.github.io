@@ -7,7 +7,7 @@ layout: default
 
   <!-- Photo column -->
   <div style="flex: 0 0 200px;">
-    <img src="assets/images/selfimage.jpg" alt="Chris Cho" style="width: 100%; border-radius: 10px;">
+    <img src="assets/images/selfimage.png" alt="Chris Cho" style="width: 100%; border-radius: 10px;">
   </div>
 
   <!-- Text column -->
