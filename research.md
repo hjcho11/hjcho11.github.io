@@ -4,7 +4,7 @@ title: "Research"
 permalink: /research/
 ---
 
-### *Towards Agent Modalist Reasons-Sensitivity*  
+### Towards Agent Modalist Reasons-Sensitivity 
 *Forthcoming in Philosophical Quarterly*  
 <a href="javascript:void(0);" onclick="toggleAbstract(this)"> (Abstract) </a>
 
