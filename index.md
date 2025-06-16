@@ -5,7 +5,7 @@ layout: default
 
 <div style="max-width: 700px; margin: 0 auto; padding-top: 40px;">
 
-  ### Hi, I'm Chris Cho.
+  Hi, I'm Chris Cho.
 
   I'm a PhD candidate in philosophy at Syracuse University. I work on free will and moral responsibility.
   <br><br>
