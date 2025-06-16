@@ -3,18 +3,22 @@ layout: default
 ---
 
 
-<div style="max-width: 700px; margin: 0 auto; padding-top: 40px;">
+<div style="display: flex; max-width: 900px; margin: 0 auto; padding-top: 40px; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
 
-  Hi, I'm Chris Cho.
+  <!-- Photo column -->
+  <div style="flex: 0 0 200px;">
+    <img src="assets/images/selfimage.jpg" alt="Chris Cho" style="width: 100%; border-radius: 10px;">
+  </div>
 
-  I'm a PhD candidate in philosophy at Syracuse University. I work on free will and moral responsibility.
-  <br><br>
+  <!-- Text column -->
+  <div style="flex: 1; min-width: 250px;">
+    <p>Hi, I'm <strong>Chris Cho</strong>.</p>
 
-  I hold a B.A. in Philosophy and Cognitive Science from the University of Toronto.
-  <br><br>
+    <p>I'm a PhD candidate in philosophy at Syracuse University. I work on free will and moral responsibility.</p>
 
-  I was raised in both Seoul and Vancouver. I enjoy CrossFit, running, and visiting record stores. 
-  </div> 
+    <p>I hold a B.A. in Philosophy and Cognitive Science from the University of Toronto.</p>
 
+    <p>I was raised in both Seoul and Vancouver. I enjoy CrossFit, running, and visiting record stores.</p>
+  </div>
 
-
+</div>
