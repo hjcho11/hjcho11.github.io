@@ -24,7 +24,7 @@ baseurl: ""  # now served from root
 minimal_mistakes_skin: default
 search: true
 feed:
-  enabled: false
+  disable: true
 
 # Build settings
 markdown: kramdown
@@ -40,9 +40,6 @@ include:
 
 footer:
   custom: custom-footer.html
-
-header:
-  custom: custom-header.html
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
