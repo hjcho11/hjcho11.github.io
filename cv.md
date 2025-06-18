@@ -4,4 +4,4 @@ title: "Curriculum Vitae"
 permalink: /cv/
 ---
 
-You can view my CV [here](assets/CV.pdf).
+You can view my CV [here](assets/CV.pdf)!
