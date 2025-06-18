@@ -4,12 +4,14 @@ title: "Research"
 permalink: /research/
 ---
 
-### Towards Agent Modalist Reasons-Sensitivity 
+### Towards Agent Modalist Reasons-Sensitivity  
 *Forthcoming in Philosophical Quarterly*  
-<a href="javascript:void(0);" onclick="toggleAbstract(this)"> (Abstract) </a>
 
-<div style="display: none; margin-top: 10px;" class="abstract">
-Many find it plausible that acting freely requires a kind of sensitivity to reasons. Modalists define this sensitivity in terms of what S does in the relevant alternative possibilities. Agent modalists take S to be an agent, assessing their reasons-sensitivity by considering what the agent would have done in those possibilities. While intuitive, agent modalists struggle with Frankfurt cases. This has led some to a mechanism-based approach. Here, I raise two objections to this approach and defend agent modalism. I argue that (1) the mechanism approach permits composite mechanisms, leading to an unattractive disjunction, and (2) excluding the agent undermines the original appeal of reasons-sensitivity. I defend agent modalism by arguing it can handle Frankfurt cases if it holds fixed the nonoccurrence of agent-altering events. This requirement also helps address rational blind spots. Thus, I aim to rehabilitate agent modalism as a viable account of reasons-sensitivity in free action.
+<div class="abstract-container" style="margin-top: 10px;">
+  <a href="javascript:void(0);" onclick="toggleAbstract(this)"> (Abstract) </a>
+  <div class="abstract" style="display: none; margin-top: 10px;">
+    Many find it plausible that acting freely requires a kind of sensitivity to reasons. Modalists define this sensitivity in terms of what S does in the relevant alternative possibilities. Agent modalists take S to be an agent, assessing their reasons-sensitivity by considering what the agent would have done in those possibilities. While intuitive, agent modalists struggle with Frankfurt cases. This has led some to a mechanism-based approach. Here, I raise two objections to this approach and defend agent modalism. I argue that (1) the mechanism approach permits composite mechanisms, leading to an unattractive disjunction, and (2) excluding the agent undermines the original appeal of reasons-sensitivity. I defend agent modalism by arguing it can handle Frankfurt cases if it holds fixed the nonoccurrence of agent-altering events. This requirement also helps address rational blind spots. Thus, I aim to rehabilitate agent modalism as a viable account of reasons-sensitivity in free action.
+  </div>
 </div>
 
 <script>
@@ -24,9 +26,3 @@ function toggleAbstract(el) {
   }
 }
 </script>
-
-<!--
-### Papers in Progress
-### Hard-Line Structuralism and Degrees  
-This work develops a novel compatibilist framework in which moral responsibility scales with the structure of agency rather than its causal history.
- -->
