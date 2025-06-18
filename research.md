@@ -5,7 +5,7 @@ permalink: /research/
 ---
 
 ### Towards Agent Modalist Reasons-Sensitivity  
-*Forthcoming in Philosophical Quarterly*  
+Forthcoming in *The Philosophical Quarterly*  
 
 <div class="abstract-container" style="margin-top: 10px;">
   <a href="javascript:void(0);" onclick="toggleAbstract(this)"> (Abstract) </a>
