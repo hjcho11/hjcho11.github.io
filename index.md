@@ -2,7 +2,6 @@
 layout: default
 ---
 
-
 <div style="display: flex; max-width: 900px; margin: 0 auto; padding-top: 40px; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
 
   <!-- Photo column -->
@@ -12,7 +11,7 @@ layout: default
 
   <!-- Text column -->
   <div style="flex: 1; min-width: 250px;">
-    <p>Hi, I'm <strong>Chris Cho</strong>.</p>
+    <h1 style="font-size: 2.5em; margin-top: 0;">Chris Cho</h1>
 
     <p>I'm a PhD candidate in philosophy at Syracuse University. I work on free will and moral responsibility.</p>
 
