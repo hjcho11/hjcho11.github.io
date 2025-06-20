@@ -55,7 +55,7 @@ function togglePreprint(el) {
   <a href="javascript:void(0);" onclick="togglePreprint(this)"> (Preprint) </a>
   <div class="preprint" style="display: none; margin-top: 10px;">
     <a href="/assets/papers/PREPRINT.pdf" target="_blank">
-      Download Preprint PDF
+      (Preprint)
     </a>
   </div>
 </div>
