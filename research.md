@@ -25,16 +25,6 @@ function toggleAbstract(el) {
     el.textContent = " (Abstract) ";
   }
 }
-function togglePreprint(el) {
-  const preprint = el.nextElementSibling;
-  if (preprint.style.display === "none") {
-    preprint.style.display = "block";
-    el.textContent = " (Hide Preprint) ";
-  } else {
-    preprint.style.display = "none";
-    el.textContent = " (Preprint) ";
-  }
-}
 </script>
 
 <div class="preprint-container" style="margin-top: 10px;">
