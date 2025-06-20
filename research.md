@@ -25,19 +25,6 @@ function toggleAbstract(el) {
     el.textContent = " (Abstract) ";
   }
 }
-</script>
-<script>
-function toggleAbstract(el) {
-  const abstract = el.nextElementSibling;
-  if (abstract.style.display === "none") {
-    abstract.style.display = "block";
-    el.textContent = " (Hide Abstract) ";
-  } else {
-    abstract.style.display = "none";
-    el.textContent = " (Abstract) ";
-  }
-}
-
 function togglePreprint(el) {
   const preprint = el.nextElementSibling;
   if (preprint.style.display === "none") {
