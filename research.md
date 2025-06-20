@@ -39,9 +39,6 @@ function togglePreprint(el) {
 
 <div class="preprint-container" style="margin-top: 10px;">
   <a href="/assets/PREPRINT.pdf" target="_blank" style="text-decoration: underline;">
-    Preprint (PDF)
+    (Preprint)
   </a>
-  <div style="margin-top: 5px; font-size: 0.9em;">
-    Please cite the final version when available.
-  </div>
 </div>
