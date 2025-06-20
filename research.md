@@ -37,12 +37,11 @@ function togglePreprint(el) {
 }
 </script>
 
-<!-- Preprint toggle -->
 <div class="preprint-container" style="margin-top: 10px;">
-  <a href="javascript:void(0);" onclick="togglePreprint(this)"> (Preprint) </a>
-  <div class="preprint" style="display: none; margin-top: 10px;">
-    <a href="/assets/PREPRINT.pdf" target="_blank">
-      (Preprint)
-    </a>
+  <a href="/assets/PREPRINT.pdf" target="_blank" style="text-decoration: underline;">
+    Preprint (PDF)
+  </a>
+  <div style="margin-top: 5px; font-size: 0.9em;">
+    Please cite the final version when available.
   </div>
 </div>
