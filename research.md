@@ -26,3 +26,36 @@ function toggleAbstract(el) {
   }
 }
 </script>
+<script>
+function toggleAbstract(el) {
+  const abstract = el.nextElementSibling;
+  if (abstract.style.display === "none") {
+    abstract.style.display = "block";
+    el.textContent = " (Hide Abstract) ";
+  } else {
+    abstract.style.display = "none";
+    el.textContent = " (Abstract) ";
+  }
+}
+
+function togglePreprint(el) {
+  const preprint = el.nextElementSibling;
+  if (preprint.style.display === "none") {
+    preprint.style.display = "block";
+    el.textContent = " (Hide Preprint) ";
+  } else {
+    preprint.style.display = "none";
+    el.textContent = " (Preprint) ";
+  }
+}
+</script>
+
+<!-- Preprint toggle -->
+<div class="preprint-container" style="margin-top: 10px;">
+  <a href="javascript:void(0);" onclick="togglePreprint(this)"> (Preprint) </a>
+  <div class="preprint" style="display: none; margin-top: 10px;">
+    <a href="/assets/papers/PREPRINT.pdf" target="_blank">
+      Download Preprint PDF
+    </a>
+  </div>
+</div>
