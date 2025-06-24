@@ -4,9 +4,32 @@ layout: default
 
 <div style="display: flex; max-width: 900px; margin: 0 auto; padding-top: 40px; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
 
-  <!-- Photo column -->
+  <!-- Photo + Icons column -->
   <div style="flex: 0 0 300px;">
     <img src="assets/images/selfimage.png" alt="Chris Cho" style="width: 100%; border-radius: 10px;">
+
+    <!-- Icons -->
+    <div style="display: flex; gap: 20px; margin-top: 20px; justify-content: center;">
+      <!-- Email -->
+      <a href="mailto:your@email.com" title="Email" target="_blank" style="color: inherit; text-decoration: none;">
+        <i class="fas fa-envelope" style="font-size: 24px;"></i>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/your-profile" title="LinkedIn" target="_blank" style="color: inherit; text-decoration: none;">
+        <i class="fab fa-linkedin" style="font-size: 24px;"></i>
+      </a>
+
+      <!-- ORCID -->
+      <a href="https://orcid.org/your-orcid-id" title="ORCID" target="_blank" style="color: inherit; text-decoration: none;">
+        <i class="fab fa-orcid" style="font-size: 24px;"></i>
+      </a>
+
+      <!-- PhilPeople -->
+      <a href="https://philpeople.org/profiles/your-profile" title="PhilPeople" target="_blank" style="width: 24px; height: 24px; display: inline-block;">
+        <img src="https://philpeople.org/assets/pp_logo-6a526402681df24759c88bcd5fde2c791a8de331259ace29607fb1dc03f952c8.svg" alt="PhilPeople" style="width: 100%; height: 100%; filter: grayscale(100%); opacity: 0.8; transition: 0.2s;">
+      </a>
+    </div>
   </div>
 
   <!-- Text column -->
