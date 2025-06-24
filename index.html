@@ -40,6 +40,11 @@
         filter: brightness(1.4) invert(1);
       }
 
+      .icon-wrapper img {
+        filter: grayscale(100%) brightness(0.6);
+        transition: filter 0.3s ease;
+      }
+
       body.dark-mode .icon-wrapper img {
         filter: brightness(1.4) invert(1);
       }
@@ -95,7 +100,8 @@
         margin-bottom: 0.8rem;
       }
 
-      .social-icons a {
+      .icon-wrapper {
+        display: inline-block;
         margin: 0 0.5rem;
         text-decoration: none;
       }
@@ -291,20 +297,32 @@
   </head>
   <body>
     <div class="container">
-      <img src="profile.JPG" alt="Profile Picture" class="profile">
+      <img src="profile.JPG" alt="Profile Picture" class="profile" title="Toggle light/dark mode">
       <h1>Chris Cho</h1>
       <p class="pronunciation">[조현준]</p>
       <p>PhD Candidate, Philosophy<br>Syracuse University</p>
 
       <div class="social-icons">
-        <a href="mailto:hcho25@syr.edu" title="Email"><img src="https://img.icons8.com/material-rounded/24/000000/new-post.png" alt="Email"></a>
-        <a href="https://www.linkedin.com/in/hjchrischo/" target="_blank" title="LinkedIn"><img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn"></a>
+        <div class="icon-wrapper">
+          <a href="mailto:hcho25@syr.edu" title="Email">
+            <img src="https://img.icons8.com/material-rounded/24/000000/new-post.png" alt="Email">
+          </a>
+        </div>
+        <div class="icon-wrapper">
+          <a href="https://www.linkedin.com/in/hjchrischo/" target="_blank" title="LinkedIn">
+            <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn">
+          </a>
+        </div>
         <div class="icon-wrapper">
           <a href="https://philpeople.org/profiles/chris-cho" target="_blank" title="PhilPeople Page">
-            <img src="https://philpeople.org/assets/pp_logo-6a526402681df24759c88bcd5fde2c791a8de331259ace29607fb1dc03f952c8.svg" alt="PhilPeople Icon" style="width:24px; height:24px;">
+            <img src="https://philpeople.org/assets/pp_logo-6a526402681df24759c88bcd5fde2c791a8de331259ace29607fb1dc03f952c8.svg" alt="PhilPeople Icon">
           </a>
-        </div>      
-        <a href="https://orcid.org/0009-0002-6840-9964" target="_blank" title="DOI Page"><img src="https://orcid.org/assets/vectors/orcid.logo.icon.svg" alt="DOI Icon" style="width:24px; height:24px; filter: grayscale(100%);"></a>
+        </div>
+        <div class="icon-wrapper">
+          <a href="https://orcid.org/0009-0002-6840-9964" target="_blank" title="DOI Page">
+            <img src="https://orcid.org/assets/vectors/orcid.logo.icon.svg" alt="DOI Icon">
+          </a>
+        </div>
       </div>
       <h2>Biography</h2>
       <p class="bio">
@@ -316,7 +334,7 @@
 
       <h2>Publications</h2>
       <ul class="publications">
-        <li><b>Cho, C.</b> (forthcoming). <a href="https://philpapers.org/archive/CHOTAM-2.pdf" target="_blank">Towards Agent Modalist Reasons-Sensitivity</a>. <i>The Philosophical Quarterly</i>.
+        <li><b>Cho, C.</b> (forthcoming). <a href="https://philpapers.org/archive/CHOTAM-2.pdf" target="_blank">Towards Agent Modalist Reasons-Sensitivity</a>. <i>The Philosophical Quarterly</i></li>.
       </ul>
 
       <h2>Upcoming Presentations</h2>
