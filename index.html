@@ -11,11 +11,15 @@
         font-family: 'Nunito', sans-serif;
         background-color: #f9f9fb;
         color: #333;
+        text-align: center;
+      }
+
+      main {
         display: flex;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        text-align: center;
+        padding: 2rem;
       }
 
       body.dark-mode {
@@ -296,53 +300,55 @@
     </style>
   </head>
   <body>
-    <div class="container">
-      <img src="profile.JPG" alt="Profile Picture" class="profile" title="Toggle light/dark mode">
-      <h1>Chris Cho</h1>
-      <p class="pronunciation">[조현준]</p>
-      <p>PhD Candidate, Philosophy<br>Syracuse University</p>
-
-      <div class="social-icons">
-        <div class="icon-wrapper">
-          <a href="mailto:hcho25@syr.edu" title="Email">
-            <img src="https://img.icons8.com/material-rounded/24/000000/new-post.png" alt="Email">
-          </a>
+    <main>
+      <div class="container">
+        <img src="profile.JPG" alt="Profile Picture" class="profile" title="Toggle light/dark mode">
+        <h1>Chris Cho</h1>
+        <p class="pronunciation">[조현준]</p>
+        <p>PhD Candidate, Philosophy<br>Syracuse University</p>
+  
+        <div class="social-icons">
+          <div class="icon-wrapper">
+            <a href="mailto:hcho25@syr.edu" title="Email">
+              <img src="https://img.icons8.com/material-rounded/24/000000/new-post.png" alt="Email">
+            </a>
+          </div>
+          <div class="icon-wrapper">
+            <a href="https://www.linkedin.com/in/hjchrischo/" target="_blank" title="LinkedIn">
+              <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn">
+            </a>
+          </div>
+          <div class="icon-wrapper">
+            <a href="https://philpeople.org/profiles/chris-cho" target="_blank" title="PhilPeople Page">
+              <img src="https://philpeople.org/assets/pp_logo-6a526402681df24759c88bcd5fde2c791a8de331259ace29607fb1dc03f952c8.svg" alt="PhilPeople Icon">
+            </a>
+          </div>
+          <div class="icon-wrapper">
+            <a href="https://orcid.org/0009-0002-6840-9964" target="_blank" title="DOI Page">
+              <img src="https://orcid.org/assets/vectors/orcid.logo.icon.svg" alt="DOI Icon">
+            </a>
+          </div>
         </div>
-        <div class="icon-wrapper">
-          <a href="https://www.linkedin.com/in/hjchrischo/" target="_blank" title="LinkedIn">
-            <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn">
-          </a>
-        </div>
-        <div class="icon-wrapper">
-          <a href="https://philpeople.org/profiles/chris-cho" target="_blank" title="PhilPeople Page">
-            <img src="https://philpeople.org/assets/pp_logo-6a526402681df24759c88bcd5fde2c791a8de331259ace29607fb1dc03f952c8.svg" alt="PhilPeople Icon">
-          </a>
-        </div>
-        <div class="icon-wrapper">
-          <a href="https://orcid.org/0009-0002-6840-9964" target="_blank" title="DOI Page">
-            <img src="https://orcid.org/assets/vectors/orcid.logo.icon.svg" alt="DOI Icon">
-          </a>
-        </div>
+        <h2>Biography</h2>
+        <p class="bio">
+          Hi! I am a PhD candidate in Philosophy at Syracuse University. I work on free will, interested in both the metaphysical and ethical questions surrounding it. I earned my BA in Philosophy and Cognitive Science from the University of Toronto.
+        </p>
+  
+        <h2>CV</h2>
+        <p>You can view my CV<a href="CV.pdf" target="_blank" class="cv-link"> here</a></p>
+  
+        <h2>Publications</h2>
+        <ul class="publications">
+          <li><b>Cho, C.</b> (forthcoming). <a href="https://philpapers.org/archive/CHOTAM-2.pdf" target="_blank">Towards Agent Modalist Reasons-Sensitivity</a>. <i>The Philosophical Quarterly</i></li>
+        </ul>
+  
+        <h2>Upcoming Presentations</h2>
+        <ul class="publications">
+          <li>"Towards Agent Modalist Reasons-Sensitivity," Eastern APA (Poster), Baltimore, MD, January 2026.</li>
+        </ul>
+  
       </div>
-      <h2>Biography</h2>
-      <p class="bio">
-        Hi! I am a PhD candidate in Philosophy at Syracuse University. I work on free will, interested in both the metaphysical and ethical questions surrounding it. I earned my BA in Philosophy and Cognitive Science from the University of Toronto.
-      </p>
-
-      <h2>CV</h2>
-      <p>You can view my CV<a href="CV.pdf" target="_blank" class="cv-link"> here</a></p>
-
-      <h2>Publications</h2>
-      <ul class="publications">
-        <li><b>Cho, C.</b> (forthcoming). <a href="https://philpapers.org/archive/CHOTAM-2.pdf" target="_blank">Towards Agent Modalist Reasons-Sensitivity</a>. <i>The Philosophical Quarterly</i></li>
-      </ul>
-
-      <h2>Upcoming Presentations</h2>
-      <ul class="publications">
-        <li>"Towards Agent Modalist Reasons-Sensitivity," Eastern APA (Poster), Baltimore, MD, January 2026.</li>
-      </ul>
-
-    </div>
+    </main>
     <script>
     document.querySelector('.profile').addEventListener('click', function () {
       document.body.classList.toggle('dark-mode');
