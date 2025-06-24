@@ -17,7 +17,7 @@ layout: default
 
     <p>I hold a B.A. in Philosophy and Cognitive Science from the University of Toronto.</p>
 
-    <p>I was raised in both Seoul and Vancouver. I enjoy CrossFit, running, and visiting record stores.</p>
+    <p>Outside of philosophy, I enjoy CrossFit, running, and visiting record stores.</p>
   </div>
 
 </div>
