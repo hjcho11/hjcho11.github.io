@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Hyeonji Cho | PhD Student</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Nunito', sans-serif;
+        background-color: #f9f9fb;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 700px;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      }
+
+      img.profile {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        margin-bottom: 0.3rem;
+        font-size: 2rem;
+        font-weight: 600;
+      }
+
+      h2 {
+        margin-top: 2rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+
+      p, li {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      ul {
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .degree {
+        font-size: 0.65em;
+        color: #666;
+        font-weight: normal;
+      }
+
+      .pronunciation {
+        font-size: 0.85rem;
+        color: #666;
+        margin-top: -0.4rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .social-icons a {
+        margin: 0 0.5rem;
+        text-decoration: none;
+      }
+
+      .social-icons img {
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+      }
+
+      .bio a {
+        color: inherit;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.2s ease;
+      }
+
+      .bio a:hover {
+        color: #F76900;
+        text-decoration: none;
+      }
+
+      a {
+        color: #007acc;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .cv-link {
+        color: #F76900;
+        text-decoration: underline;
+        font-weight: normal;
+      }
+
+      .publications li {
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      .publications li b {
+        font-weight: 600;
+      }
+
+      .publications a {
+        color: inherit;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .publications a:hover {
+        text-decoration: underline;
+      }
+
+      .gallery {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+      }
+
+      .gallery a {
+        width: 30%;
+        aspect-ratio: 3 / 4;
+        display: block;
+        position: relative;
+      }
+
+      .gallery a img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .gallery a img:hover {
+        transform: scale(1.05);
+      }
+
+      .lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .lightbox.active {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .lightbox img {
+        max-width: 90vw;
+        max-height: 90vh;
+        border-radius: 10px;
+      }
+
+      .lightbox .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .lightbox .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+        user-select: none;
+      }
+
+      .lightbox .arrow.left {
+        left: 30px;
+      }
+
+      .lightbox .arrow.right {
+        right: 30px;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 1.5rem;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      
+        img.profile {
+          width: 120px;
+          height: 120px;
+        }
+      
+        h1 {
+          font-size: 1.6rem;
+        }
+      
+        .pronunciation {
+          font-size: 0.8rem;
+        }
+      
+        .social-icons img {
+          width: 20px;
+          height: 20px;
+        }
+      
+        .gallery a {
+          width: 45%;
+        }
+      
+        .publications li {
+          font-size: 0.9rem;
+          text-align: left;
+        }
+      
+        p, li {
+          font-size: 0.95rem;
+        }
+      
+        .lightbox .arrow {
+          font-size: 1.5rem;
+        }
+      
+        .lightbox .close {
+          font-size: 1.8rem;
+          top: 10px;
+          right: 15px;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="profile.JPG" alt="Profile Picture" class="profile">
+      <h1>Hyeonji Cho <span class="degree">(M.A.)</span></h1>
+      <p class="pronunciation">[hee-uhnjee cho]</p>
+      <p>PhD Student, Human Development and Family Science<br>Syracuse University (NY, USA)</p>
+
+      <div class="social-icons">
+        <a href="mailto:hcho36@syr.edu" title="Email"><img src="https://img.icons8.com/ios-filled/50/000000/email.png" alt="Email"></a>
+        <a href="https://www.linkedin.com/in/hyeonji-cho-706391202" target="_blank" title="LinkedIn"><img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn"></a>
+        <a href="https://orcid.org/0009-0007-6517-7957" target="_blank" title="DOI Page"><img src="https://orcid.org/assets/vectors/orcid.logo.icon.svg" alt="DOI Icon" style="width:24px; height:24px; filter: grayscale(100%);"></a>
+      </div>
+
+      <h2>Biography</h2>
+      <p class="bio">
+        I am a PhD student in <a href="https://falk.syr.edu/hdfs/" target="_blank">Human Development and Family Science</a> at Syracuse University and a graduate student associate at the <a href="https://asi.syr.edu" target="_blank">Aging Studies Institute (ASI)</a>. I earned both my Master’s and Bachelor’s degrees from Seoul National University in South Korea. My research interests include late-life intergenerational relationships, family demography, and family policy.
+      </p>
+
+      <h2>CV</h2>
+      <p><a href="CV.pdf" target="_blank" class="cv-link">Download CV (PDF)</a></p>
+
+      <h2>Selected Publications</h2>
+      <ul class="publications">
+        <li><b>Cho, H.</b> (2025). <a href="https://doi.org/10.14305/rt.lerner.2025.8" target="_blank">Younger grandparents provide less support to their grandchildren now than in the past, but support among older grandparents has remained stable</a>. <i>Population Health Research Brief Series</i>, <i>273</i>.</li>
+        <li><b>Cho, H.</b>, & Chin, M. (2024). <a href="https://doi.org/10.31693/KJPS.2024.09.47.3.4" target="_blank">Trends and characteristics of four types of familial financial support among Korean sandwiched middle-aged adults</a>. <i>Korea Journal of Population Studies</i>, <i>47</i>(3), 93–115.</li>
+        <li><b>Cho, H.</b>, Kim, N., & Kim, K. (2024). <a href="https://doi.org/10.1177/07334648241249619" target="_blank">The role of late-life work among widowed adults in Korea: A buffer or burden for widow(er)s’ health?</a> <i>Journal of Applied Gerontology</i>, <i>43</i>(11), 1621–1629.</li>
+        <li><b>Cho, H.</b>, & Chin, M. (2023). <a href="https://doi.org/10.7466/JFBL.2023.41.3.81" target="_blank">Characteristics and life satisfaction of young adults living with their parents by relative income status</a>. <i>Journal of Families and Better Life</i>, <i>41</i>(3), 81–93.</li>
+      </ul>
+
+      <h2>Gallery</h2>
+      <div class="gallery"> 
+        <a href="#" onclick="openLightbox(0)"><img src="photo1.JPG" alt="Photo 1"></a>
+        <a href="#" onclick="openLightbox(1)"><img src="photo2.JPG" alt="Photo 2"></a>
+        <a href="#" onclick="openLightbox(2)"><img src="photo3.JPG" alt="Photo 3"></a>
+      </div>
+    </div>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+      <span class="close" onclick="closeLightbox(event)">&times;</span>
+      <span class="arrow left" onclick="navigate(-1, event)">&#10094;</span>
+      <img id="lightbox-img" src="" alt="Large Image">
+      <span class="arrow right" onclick="navigate(1, event)">&#10095;</span>
+    </div>
+
+    <script>
+      const images = ['photo1.JPG', 'photo2.JPG', 'photo3.JPG'];
+      let currentIndex = 0;
+
+      function openLightbox(index) {
+        currentIndex = index;
+        const lightbox = document.getElementById('lightbox');
+        const img = document.getElementById('lightbox-img');
+        img.src = images[currentIndex];
+        lightbox.classList.add('active');
+      }
+
+      function closeLightbox(event) {
+        if (!event.target.closest('img') || event.target.classList.contains('close')) {
+          document.getElementById('lightbox').classList.remove('active');
+        }
+      }
+
+      function navigate(direction, event) {
+        event.stopPropagation();
+        currentIndex = (currentIndex + direction + images.length) % images.length;
+        document.getElementById('lightbox-img').src = images[currentIndex];
+      }
+
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          document.getElementById('lightbox').classList.remove('active');
+        } else if (event.key === 'ArrowLeft') {
+          navigate(-1, event);
+        } else if (event.key === 'ArrowRight') {
+          navigate(1, event);
+        }
+      });
+    </script>
+  </body>
+</html>
