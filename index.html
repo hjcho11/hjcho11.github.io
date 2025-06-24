@@ -18,6 +18,24 @@
         text-align: center;
       }
 
+      body.dark-mode {
+        background-color: #1a1a1a;
+        color: #f0f0f0;
+      }
+
+      body.dark-mode .container {
+        background-color: #2a2a2a;
+        box-shadow: 0 8px 20px rgba(255,255,255,0.08);
+      }
+
+      body.dark-mode a {
+        color: #80bfff;
+      }
+
+      body, .container {
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
       .container {
         max-width: 700px;
         padding: 2rem;
@@ -278,7 +296,7 @@
       </div>
       <h2>Biography</h2>
       <p class="bio">
-        Hi! I am a PhD candidate in Philosophy at Syracuse University. I work on free will, interested in both the metaphysical and ethical questions surrounding it. I earned my BA in Philosophy and Cognitive Science at the University of Toronto.
+        Hi! I am a PhD candidate in Philosophy at Syracuse University. I work on free will, interested in both the metaphysical and ethical questions surrounding it. I earned my BA in Philosophy and Cognitive Science from the University of Toronto.
       </p>
 
       <h2>CV</h2>
@@ -294,56 +312,11 @@
         <li>"Towards Agent Modalist Reasons-Sensitivity," Eastern APA (Poster), Baltimore, MD, January 2026.</li>
       </ul>
 
+    </div>
+    <script>
+    document.querySelector('.profile').addEventListener('click', function () {
+      document.body.classList.toggle('dark-mode');
+    });
+    </script>
+  </body>
 </html>
-
-  <!--       <h2>Gallery</h2>
-  <div class="gallery"> 
-    <a href="#" onclick="openLightbox(0)"><img src="photo1.JPG" alt="Photo 1"></a>
-    <a href="#" onclick="openLightbox(1)"><img src="photo2.JPG" alt="Photo 2"></a>
-    <a href="#" onclick="openLightbox(2)"><img src="photo3.JPG" alt="Photo 3"></a>
-  </div>
-</div>
-
-<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-  <span class="close" onclick="closeLightbox(event)">&times;</span>
-  <span class="arrow left" onclick="navigate(-1, event)">&#10094;</span>
-  <img id="lightbox-img" src="" alt="Large Image">
-  <span class="arrow right" onclick="navigate(1, event)">&#10095;</span>
-</div>
-
-<script>
-  const images = ['photo1.JPG', 'photo2.JPG', 'photo3.JPG'];
-  let currentIndex = 0;
-
-  function openLightbox(index) {
-    currentIndex = index;
-    const lightbox = document.getElementById('lightbox');
-    const img = document.getElementById('lightbox-img');
-    img.src = images[currentIndex];
-    lightbox.classList.add('active');
-  }
-
-  function closeLightbox(event) {
-    if (!event.target.closest('img') || event.target.classList.contains('close')) {
-      document.getElementById('lightbox').classList.remove('active');
-    }
-  }
-
-  function navigate(direction, event) {
-    event.stopPropagation();
-    currentIndex = (currentIndex + direction + images.length) % images.length;
-    document.getElementById('lightbox-img').src = images[currentIndex];
-  }
-
-  document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-      document.getElementById('lightbox').classList.remove('active');
-    } else if (event.key === 'ArrowLeft') {
-      navigate(-1, event);
-    } else if (event.key === 'ArrowRight') {
-      navigate(1, event);
-    }
-  });
-</script>
-</body> -->
-
