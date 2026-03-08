@@ -1,363 +1,458 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chris Cho | PhD Candidate</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet">
-    <style>
-      html, body {
-        height: 100%;
-      }
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Nunito', sans-serif;
-        background-color: #f9f9fb;
-        color: #333;
-        text-align: center;
-        background: linear-gradient(to bottom, #f9f9fb, #e6f0ff);
-        min-height: 100vh;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chris Cho | PhD Candidate</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-      main {
-        display: flex;
-        justify-content: center;
-        padding: 2rem;
-        box-sizing: border-box;
-      }
+    :root {
+      --navy: #1a2744;
+      --accent: #c0392b;
+      --text: #222;
+      --muted: #666;
+      --border: #ddd;
+      --bg: #fafaf8;
+    }
 
-      body.dark-mode {
-        background-color: #1a1a1a;
-        color: #f0f0f0;
-      }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
 
-      body.dark-mode .container {
-        background-color: #2a2a2a;
-        box-shadow: 0 8px 20px rgba(255,255,255,0.08);
-      }
+    /* ── Header ── */
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 0 3rem;
+      display: flex;
+      align-items: stretch;
+      gap: 2rem;
+      min-height: 80px;
+    }
 
-      body.dark-mode a {
-        color: #80bfff;
-      }
+    .header-identity {
+      display: flex;
+      align-items: center;
+      padding: 1.2rem 0;
+    }
 
-      body, .container {
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
+    .header-identity h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: white;
+    }
 
-      body.dark-mode .social-icons img {
-        filter: brightness(1.4) invert(1);
-      }
+    .header-identity h1 .korean {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 400;
+      margin-left: 0.5rem;
+    }
 
-      .icon-wrapper img {
-        filter: grayscale(100%) brightness(0.6);
-        transition: filter 0.3s ease;
-      }
+    nav {
+      margin-left: auto;
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+    }
 
-      body.dark-mode .icon-wrapper img {
-        filter: invert(100%) sepia(0%) brightness(1.2);
-      }
-      
-      .container {
-        max-width: 700px;
-        padding: 2rem;
-        background-color: white;
-        border-radius: 16px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      }
+    nav button {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.6);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0 1.5rem;
+      cursor: pointer;
+      border-bottom: 4px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
 
-      img.profile {
-        width: 200px;   
-        height: 200px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 1rem;
-      }
+    nav button:hover { color: white; }
 
-      h1 {
-        margin-bottom: 0.3rem;
-        font-size: 2rem;
-        font-weight: 600;
-      }
+    nav button.active {
+      color: white;
+      border-bottom: 4px solid #e07040;
+    }
 
-      h2 {
-        margin-top: 2rem;
-        font-size: 1.3rem;
-        font-weight: 600;
-      }
+    /* ── Layout ── */
+    .page { display: none; max-width: 820px; margin: 0 auto; padding: 3.5rem 2.5rem; width: 100%; }
+    .page.active { display: block; }
 
-      p, li {
-        font-size: 1rem;
-        line-height: 1.6;
-      }
+    /* ── About ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
 
-      ul {
-        padding-left: 0;
-        list-style: none;
-      }
+    .about-sidebar img {
+      width: 260px;
+      height: 325px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
 
-      .degree {
-        font-size: 0.65em;
-        color: #666;
-        font-weight: normal;
-      }
+    .about-sidebar .social-links {
+      margin-top: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
 
-      .pronunciation {
-        font-size: 0.85rem;
-        color: #666;
-        margin-top: -0.4rem;
-        margin-bottom: 0.8rem;
-      }
+    .about-sidebar .social-links a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
 
-      .icon-wrapper {
-        display: inline-block;
-        margin: 0 0.5rem;
-        text-decoration: none;
-      }
+    .about-sidebar .social-links a:hover { color: var(--accent); }
 
-      .social-icons img {
-        width: 24px;
-        height: 24px;
-        vertical-align: middle;
-      }
+    .about-main h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 0.25rem;
+    }
 
-      .bio a {
-        color: inherit;
-        text-decoration: none;
-        font-weight: 600;
-        transition: color 0.2s ease;
-      }
+    .about-main h2 .korean {
+      font-size: 1.1rem;
+      color: var(--muted);
+      font-weight: 400;
+      margin-left: 0.4rem;
+    }
 
-      .bio a:hover {
-        color: #F76900;
-        text-decoration: none;
-      }
+    .about-main p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 1rem;
+    }
 
-      a {
-        color: #007acc;
-      }
+    /* ── Section heading ── */
+    .section-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--navy);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.6rem;
+    }
 
-      a:hover {
-        text-decoration: underline;
-      }
+    /* ── Pub items ── */
+    .pub-item {
+      margin-bottom: 1.8rem;
+      padding-bottom: 1.8rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.97rem;
+      line-height: 1.75;
+    }
 
-      .cv-link {
-        color: #F76900;
-        text-decoration: underline;
-        font-weight: normal;
-      }
+    .pub-item:last-child { border-bottom: none; }
 
-      .publications li {
-        font-size: 0.95rem;
-        margin-bottom: 1.2rem;
-        line-height: 1.6;
-        text-align: center;
-      }
+    .pub-item .pub-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--navy);
+      text-decoration: none;
+      transition: color 0.2s;
+      display: block;
+    }
 
-      .publications li b {
-        font-weight: 600;
-      }
+    .pub-item .pub-title:hover { color: var(--accent); }
 
-      .publications a {
-        color: inherit;
-        text-decoration: none;
-        font-weight: 500;
-      }
+    .pub-item .pub-status {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+      display: block;
+    }
 
-      .publications a:hover {
-        text-decoration: underline;
-      }
+    .pub-item .pub-meta {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
 
-      .gallery {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        flex-wrap: wrap;
-        margin-top: 1.5rem;
-      }
+    .abstract-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+    }
 
-      .gallery a {
-        width: 30%;
-        aspect-ratio: 3 / 4;
-        display: block;
-        position: relative;
-      }
+    .abstract-toggle:hover {
+      color: var(--navy);
+      border-color: var(--navy);
+    }
 
-      .gallery a img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-        cursor: pointer;
-      }
+    .pub-abstract {
+      display: none;
+      margin-top: 0.9rem;
+      font-size: 0.92rem;
+      color: #444;
+      line-height: 1.75;
+      border-left: 2px solid var(--border);
+      padding-left: 1rem;
+    }
 
-      .gallery a img:hover {
-        transform: scale(1.05);
-      }
+    .pub-abstract.open { display: block; }
 
-      .lightbox {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.8);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
+    /* ── Teaching ── */
+    .course-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
 
-      .lightbox.active {
-        visibility: visible;
-        opacity: 1;
-      }
+    .course-item:last-child { border-bottom: none; }
 
-      .lightbox img {
-        max-width: 90vw;
-        max-height: 90vh;
-        border-radius: 10px;
-      }
+    .course-item h3 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.08rem;
+      font-weight: 500;
+      color: var(--navy);
+    }
 
-      .lightbox .close {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        font-size: 2rem;
-        color: white;
-        cursor: pointer;
-        font-weight: bold;
-      }
+    .course-item .course-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
 
-      .lightbox .arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 2rem;
-        color: white;
-        cursor: pointer;
-        font-weight: bold;
-        user-select: none;
-      }
+    .subsection-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--navy);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+    }
 
-      .lightbox .arrow.left {
-        left: 30px;
-      }
+    /* ── Footer ── */
+    footer {
+      margin-top: auto;
+      background: var(--navy);
+      color: rgba(255,255,255,0.45);
+      font-size: 0.78rem;
+      text-align: center;
+      padding: 1.1rem 2rem;
+      letter-spacing: 0.02em;
+    }
 
-      .lightbox .arrow.right {
-        right: 30px;
-      }
+    footer a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+    }
 
-      @media (max-width: 600px) {
-        .container {
-          padding: 1.5rem;
-          border-radius: 0;
-          box-shadow: none;
-        }
-      
-        img.profile {
-          width: 120px;
-          height: 120px;
-        }
-      
-        h1 {
-          font-size: 1.6rem;
-        }
-      
-        .pronunciation {
-          font-size: 0.8rem;
-        }
-      
-        .social-icons img {
-          width: 20px;
-          height: 20px;
-        }
-      
-        .gallery a {
-          width: 45%;
-        }
-      
-        .publications li {
-          font-size: 0.9rem;
-          text-align: left;
-        }
-      
-        p, li {
-          font-size: 0.95rem;
-        }
-      
-        .lightbox .arrow {
-          font-size: 1.5rem;
-        }
-      
-        .lightbox .close {
-          font-size: 1.8rem;
-          top: 10px;
-          right: 15px;
-        }
-      }
+    footer a:hover { color: white; }
 
-    </style>
-  </head>
-  <body>
-    <main>
-      <div class="container">
-        <img src="profile.JPG" alt="Profile Picture" class="profile" title="Toggle light/dark mode">
-        <h1>Chris Cho</h1>
-        <p class="pronunciation">[조현준]</p>
-        <p>PhD Candidate, Philosophy<br>Syracuse University</p>
-  
-        <div class="social-icons">
-          <div class="icon-wrapper">
-            <a href="mailto:hcho25@syr.edu" title="Email">
-              <img src="https://img.icons8.com/material-rounded/24/000000/new-post.png" alt="Email">
-            </a>
-          </div>
-          <div class="icon-wrapper">
-            <a href="https://www.linkedin.com/in/hjchrischo/" target="_blank" title="LinkedIn">
-              <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn">
-            </a>
-          </div>
-          <div class="icon-wrapper">
-            <a href="https://philpeople.org/profiles/chris-cho" target="_blank" title="PhilPeople Page">
-              <img src="https://philpeople.org/assets/pp_logo-6a526402681df24759c88bcd5fde2c791a8de331259ace29607fb1dc03f952c8.svg" alt="PhilPeople Icon">
-            </a>
-          </div>
-          <div class="icon-wrapper">
-            <a href="https://orcid.org/0009-0002-6840-9964" target="_blank" title="DOI Page">
-              <img src="https://orcid.org/assets/vectors/orcid.logo.icon.svg" alt="DOI Icon">
-            </a>
-          </div>
-        </div>
-        <h2>Biography</h2>
-        <p class="bio">
-          Hi! I am a PhD candidate in Philosophy at Syracuse University. I work on free will, interested in both the metaphysical and ethical questions surrounding it. I earned my BA in Philosophy and Cognitive Science from the University of Toronto.
-        </p>
-  
-        <h2>CV</h2>
-        <p>You can view my CV<a href="CV.pdf" target="_blank" class="cv-link"> here</a></p>
-  
-        <h2>Publications</h2>
-        <ul class="publications">
-          <li><b>Cho, C.</b> (forthcoming). <a href="https://academic.oup.com/pq/advance-article-abstract/doi/10.1093/pq/pqaf058/8189324?utm_source=advanceaccess&utm_campaign=pq&utm_medium=email" target="_blank">Towards Agent Modalist Reasons-Sensitivity</a>. <i>The Philosophical Quarterly</i></li>
-        </ul>
-  
-        <!-- <h2>Upcoming Presentations</h2>
-        <ul class="publications">
-          <li>"Towards Agent Modalist Reasons-Sensitivity," Eastern APA (Poster), Baltimore, MD, January 2026.</li>
-        </ul> -->
-  
+    /* ── Mobile ── */
+    @media (max-width: 600px) {
+      header { padding: 0 1.2rem; flex-wrap: wrap; min-height: auto; }
+      .header-identity { padding: 1rem 0 0; width: 100%; }
+      nav { margin-left: 0; width: 100%; overflow-x: auto; }
+      nav button { font-size: 0.72rem; padding: 0.75rem 0.9rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-sidebar img { width: 140px; height: 175px; }
+      .about-sidebar .social-links { flex-direction: row; flex-wrap: wrap; gap: 0.6rem; }
+      .page { padding: 2rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-identity">
+    <h1>Chris Cho</h1>
+  </div>
+  <nav>
+    <button class="active" onclick="show('about', this)">About</button>
+    <button onclick="show('research', this)">Research</button>
+    <button onclick="show('teaching', this)">Teaching</button>
+  </nav>
+</header>
+
+<!-- ABOUT -->
+<div class="page active" id="about">
+  <div class="about-grid">
+    <div class="about-sidebar">
+      <img src="profile.JPG" alt="Chris Cho">
+      <div class="social-links">
+        <a href="mailto:hcho25@syr.edu">✉ hcho25@syr.edu</a>
+        <a href="https://www.linkedin.com/in/hjchrischo/" target="_blank">↗ LinkedIn</a>
+        <a href="https://philpeople.org/profiles/chris-cho" target="_blank">↗ PhilPeople</a>
+        <a href="https://orcid.org/0009-0002-6840-9964" target="_blank">↗ ORCID</a>
       </div>
-    </main>
-    <script>
-    document.querySelector('.profile').addEventListener('click', function () {
-      document.body.classList.toggle('dark-mode');
-    });
-    </script>
-  </body>
+    </div>
+    <div class="about-main">
+      <h2>Chris Cho <span class="korean">조현준</span></h2>
+      <p>
+        Hi! I am a PhD candidate in the Department of Philosophy at Syracuse University. I work on free will, interested in both the metaphysical and ethical questions surrounding it. I earned my BA in Philosophy and Cognitive Science from the University of Toronto.
+      </p>
+      <p>You can see my CV <a href="CV.pdf" target="_blank" style="color:var(--accent);">here</a>.</p>
+      <p>I was born and (partly) raised in South Korea. The name in brackets is my Korean name. I publish under Chris Cho.</p>
+    </div>
+  </div>
+</div>
+
+<!-- RESEARCH -->
+<div class="page" id="research">
+  <h2 class="section-title">Dissertation</h2>
+  <div class="pub-item">
+    <a class="pub-title">Hard-line Structuralism: Moral Responsibility without History</a>
+    <div class="pub-meta">
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
+      <span>Dissertation &nbsp;·&nbsp; Syracuse University</span>
+    </div>
+    <div class="pub-abstract">Can manipulated agents be morally responsible for what they do? Many find the claim that they can philosophically scandalous. In this dissertation, I argue otherwise. As a structuralist, I hold that an agent's moral responsibility is determined solely by their psychological or agential structure at the time of action. And as a hard-liner, I hold that manipulated agents are morally responsible because they satisfy certain structural conditions compatibilists find sufficient for moral responsibility. I therefore defend what I call <i>hard-line structuralism</i>.</div>
+  </div>
+
+  <h2 class="section-title" style="margin-top:2.5rem;">Publications</h2>
+  <div class="pub-item">
+    <a href="https://academic.oup.com/pq/advance-article-abstract/doi/10.1093/pq/pqaf058/8189324" target="_blank" class="pub-title">Towards Agent Modalist Reasons-Sensitivity</a>
+    <div class="pub-meta">
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
+      <span>Forthcoming &nbsp;·&nbsp; <i>The Philosophical Quarterly</i></span>
+    </div>
+    <div class="pub-abstract">Many find it plausible that acting freely requires a kind of sensitivity to reasons. Modalists define this sensitivity in terms of what S does in the relevant alternative possibilities. Agent modalists take S to be an agent, assessing their reasons-sensitivity by considering what the agent would have done in those possibilities. While intuitive, agent modalists struggle with Frankfurt cases. This has led some to a mechanism-based approach. Here, I raise two objections to this approach and defend agent modalism. I argue that (1) the mechanism approach permits composite mechanisms, leading to an unattractive disjunction, and (2) excluding the agent undermines the original appeal of reasons-sensitivity. I defend agent modalism by arguing it can handle Frankfurt cases if it holds fixed the nonoccurrence of agent-altering events. This requirement also helps address rational blind spots. Thus, I aim to rehabilitate agent modalism as a viable account of reasons-sensitivity in free action.</div>
+  </div>
+
+  <h2 class="section-title" style="margin-top:2.5rem;">Works in Progress</h2>
+  <div class="pub-item">
+    <span class="pub-title" style="font-style:normal;">Paper on manipulation arguments</span>
+    <span class="pub-status">Under review</span>
+  </div>
+  <div class="pub-item">
+    <span class="pub-title" style="font-style:normal;">Paper on manipulation arguments</span>
+    <span class="pub-status">Under review</span>
+  </div>
+  <div class="pub-item">
+    <span class="pub-title" style="font-style:normal;">Paper on degrees of responsibility</span>
+    <span class="pub-status">Under review</span>
+  </div>
+  <div class="pub-item">
+    <span class="pub-title" style="font-style:normal;">Paper on reasons-sensitivity and modalism</span>
+    <span class="pub-status">In preparation</span>
+  </div>
+
+  <h2 class="section-title" style="margin-top:2.5rem;">Presentations</h2>
+  <div class="pub-item">
+    <span class="pub-title" style="font-style:normal;">"Towards Agent Modalist Reasons-Sensitivity"</span>
+    <span class="pub-status">Eastern APA (Poster) &nbsp;·&nbsp; January 2026</span>
+  </div>
+  <div class="pub-item">
+    <span class="pub-title" style="font-style:normal;">"Manipulation and Hard-line Structuralism"</span>
+    <span class="pub-status">Working Papers, Syracuse University &nbsp;·&nbsp; April 2025</span>
+  </div>
+  <div class="pub-item">
+    <span class="pub-title" style="font-style:normal;">"Towards Agent Modalist Reasons-Sensitivity"</span>
+    <span class="pub-status">Free Will and Agency Conference, Florida State University &nbsp;·&nbsp; October 2024</span>
+  </div>
+  <div class="pub-item">
+    <span class="pub-title" style="font-style:normal;">"Responding to Cyr: A Defense of Historicism"</span>
+    <span class="pub-status">Graduate Philosophy Conference, University of Iowa &nbsp;·&nbsp; April 2024</span>
+  </div>
+  <div class="pub-item">
+    <span class="pub-title" style="font-style:normal;">"Is there a duty to adopt? Evaluating the Assistance Argument"</span>
+    <span class="pub-status">SPEL Conference, Binghamton University &nbsp;·&nbsp; November 2023</span>
+  </div>
+</div>
+
+<!-- TEACHING -->
+<div class="page" id="teaching">
+  <h2 class="section-title">Teaching</h2>
+
+  <p style="font-size:1rem; line-height:1.8; color:#333; margin-bottom:1rem;">
+    I am a dedicated teacher who believes that philosophy, done well, should be fun, engaging, and accessible. I strive to create a classroom environment where students feel comfortable wrestling with difficult ideas, and where abstract philosophical questions are brought to life through concrete examples and open discussion.
+  </p>
+  <p style="font-size:1rem; line-height:1.8; color:#333; margin-bottom:2rem;">
+    A full record of my teaching experience is listed below. My teaching portfolio is available <a href="teachingportfolio.pdf" target="_blank" style="color:var(--accent);">here</a>.
+  </p>
+
+  <h3 class="subsection-title">As Primary Instructor</h3>
+  <div class="course-item">
+    <h3>Introduction to Moral Theory</h3>
+    <div class="course-meta">Syracuse University &nbsp;·&nbsp; Spring 2025</div>
+  </div>
+  <div class="course-item">
+    <h3>Theories of Knowledge and Reality</h3>
+    <div class="course-meta">Syracuse University &nbsp;·&nbsp; Fall 2025, Summer 2025</div>
+  </div>
+
+  <h3 class="subsection-title" style="margin-top:2rem;">As Teaching Assistant</h3>
+  <div class="course-item">
+    <h3>Critical Thinking</h3>
+    <div class="course-meta">Syracuse University &nbsp;·&nbsp; Spring 2025 &nbsp;·&nbsp; for Josh Hunt</div>
+  </div>
+  <div class="course-item">
+    <h3>Human Nature</h3>
+    <div class="course-meta">Syracuse University &nbsp;·&nbsp; Fall 2024 &nbsp;·&nbsp; for Pam Ryan</div>
+  </div>
+  <div class="course-item">
+    <h3>Logic</h3>
+    <div class="course-meta">Syracuse University &nbsp;·&nbsp; Spring 2024 &nbsp;·&nbsp; for Michael Rieppel</div>
+  </div>
+  <div class="course-item">
+    <h3>Theories of Knowledge and Reality</h3>
+    <div class="course-meta">Syracuse University &nbsp;·&nbsp; Fall 2023 &nbsp;·&nbsp; for Robert van Gulick</div>
+  </div>
+  <div class="course-item">
+    <h3>Logic</h3>
+    <div class="course-meta">Syracuse University &nbsp;·&nbsp; Spring 2023 &nbsp;·&nbsp; for Mark Heller</div>
+  </div>
+  <div class="course-item">
+    <h3>Introduction to Moral Theory</h3>
+    <div class="course-meta">Syracuse University &nbsp;·&nbsp; Fall 2022 &nbsp;·&nbsp; for Dave Sobel</div>
+  </div>
+</div>
+
+<footer>
+  <a href="mailto:hcho25@syr.edu">hcho25@syr.edu</a> &nbsp;·&nbsp; Department of Philosophy, Syracuse University &nbsp;·&nbsp; Last updated January 2026
+</footer>
+
+<script>
+  function show(id, btn) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  function toggleAbstract(btn) {
+    const abstract = btn.closest('.pub-item').querySelector('.pub-abstract');
+    abstract.classList.toggle('open');
+    btn.textContent = abstract.classList.contains('open') ? 'Hide' : 'Abstract';
+  }
+</script>
+</body>
 </html>
