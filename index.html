@@ -469,11 +469,14 @@
 </footer>
 
 <script>
+  const validPages = ['about', 'research', 'teaching'];
+
   function show(id, btn) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
     document.getElementById(id).classList.add('active');
     btn.classList.add('active');
+    history.replaceState(null, '', '#' + id);
   }
 
   function toggleAbstract(btn) {
@@ -481,6 +484,15 @@
     abstract.classList.toggle('open');
     btn.textContent = abstract.classList.contains('open') ? 'Hide' : 'Abstract';
   }
+
+  // On load, restore the page from the URL hash (falls back to 'about')
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash.replace('#', '');
+    const target = validPages.includes(hash) ? hash : 'about';
+    const btn = document.querySelector(`nav button[onclick*="'${target}'"]`);
+    if (btn) show(target, btn);
+  });
 </script>
+
 </body>
 </html>
